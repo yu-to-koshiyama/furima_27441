@@ -31,10 +31,10 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :Exhibited_goodses
+- has_many :dealings
 - has_many :Purchases
 
-## Exihited_goods テーブル
+## Exhibited_goods テーブル
 
 | Column            | Type       | Options                     |
 | ----------------- | ---------- | --------------------------- |
@@ -42,20 +42,19 @@ Things you may want to cover:
 | image             | string     | null:false                  |
 | goods_name        | string     | null: false                 |
 | goods_explanation | text       | null: false                 |
-| goods_price       | integer    | null:false                  |
-| is_purchased      | tinyint    | default:0                   |
+| selling_price     | integer    | null:false                  |
 | category_id       | integer    | null:false                  |
+| status_id         | integer    | null:false                  |
 | payment_id        | integer    | null:false                  |
 | prefecture_id     | integer    | null:false                  |
 | until_delivery_id | integer    | null:false                  |
-| delivery          | references | null:false,foreign_key:true |
 | user              | references | null:false,foreign_key:true |
 
 ### Association
 
-- belongs_to:user
+- belongs_to:dealing
 
-## Parchases テーブル
+## Purchases テーブル
 
 | Column          | Type       | Options         |
 | --------------- | ---------- | --------------- |
@@ -76,15 +75,29 @@ Things you may want to cover:
 | Column               | Type    | Options         |
 | -------------------- | ------- | --------------- |
 | id                   | integer | prime_key: true |
-| postal_code          | int     | null:false      |
+| postal_code          | integer | null:false      |
 | prefecture_id        | integer | null:false      |
-| address_city         | String  | null:false      |
+| address_city         | string  | null:false      |
 | address_house_number | int     | null:false      |
 | phone_number         | int     | null:false      |
 
 ### Association
 
 - belongs_to:purchase
+
+## Dealings テーブル
+
+| Column             | Type       | Options         |
+| ------------------ | ---------- | --------------- |
+| id                 | integer    | prime_key: true |
+| buyer_id           | references | null:false      |
+| seller_id          | references | null:false      |
+| exhibited_goods_id | references | null:false      |
+
+### Association
+
+- belongs_to:user
+- belongs_to:exhibited_goods
 
 * Database initialization
 
