@@ -27,7 +27,7 @@ Things you may want to cover:
 | family_name      | string  | null:false               |
 | first_name_kana  | string  | null:false               |
 | family_name_kana | string  | null:false               |
-| birthday         | date    | null:false               |
+| birthday         | integer | null:false               |
 
 ### Association
 
@@ -36,48 +36,24 @@ Things you may want to cover:
 
 ## Exihited_goods テーブル
 
-| Column       | Type       | Options                     |
-| ------------ | ---------- | --------------------------- |
-| id           | integer    | prime_key: true             |
-| image        | string     | null:false                  |
-| name         | string     | null: false                 |
-| explanation  | text       | null: false                 |
-| price        | int        | null:false                  |
-| is_purchased | tinyint    | default:0                   |
-| detail       | references | null:false,foreign_key:true |
-| delivery     | references | null:false,foreign_key:true |
-| user         | references | null:false,foreign_key:true |
+| Column            | Type       | Options                     |
+| ----------------- | ---------- | --------------------------- |
+| id                | integer    | prime_key: true             |
+| image             | string     | null:false                  |
+| goods_name        | string     | null: false                 |
+| goods_explanation | text       | null: false                 |
+| goods_price       | integer    | null:false                  |
+| is_purchased      | tinyint    | default:0                   |
+| category_id       | integer    | null:false                  |
+| payment_id        | integer    | null:false                  |
+| prefecture_id     | integer    | null:false                  |
+| until_delivery_id | integer    | null:false                  |
+| delivery          | references | null:false,foreign_key:true |
+| user              | references | null:false,foreign_key:true |
 
 ### Association
 
 - belongs_to:user
-- has_one:detail
-- has_one:delivery
-
-## Details テーブル
-
-| Column   | Type    | Options         |
-| -------- | ------- | --------------- |
-| id       | integer | prime_key: true |
-| category | string  | null:false      |
-| status   | string  | null:false      |
-
-### Association
-
-- belongs_to:Exihited_goods
-
-## Deliveries テーブル
-
-| Column         | Type    | Options         |
-| -------------- | ------- | --------------- |
-| id             | integer | prime_key: true |
-| payment        | string  | null:false      |
-| prefecture     | string  | null:false      |
-| until_delivery | string  | null:false      |
-
-### Association
-
-- belongs_to:Exihited_goods
 
 ## Parchases テーブル
 
@@ -101,7 +77,7 @@ Things you may want to cover:
 | -------------------- | ------- | --------------- |
 | id                   | integer | prime_key: true |
 | postal_code          | int     | null:false      |
-| address_prefecture   | string  | null:false      |
+| prefecture_id        | integer | null:false      |
 | address_city         | String  | null:false      |
 | address_house_number | int     | null:false      |
 | phone_number         | int     | null:false      |
