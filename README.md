@@ -58,14 +58,15 @@ Things you may want to cover:
 
 ## Shipping_addresses テーブル
 
-| Column               | Type    | Options         |
-| -------------------- | ------- | --------------- |
-| id                   | integer | prime_key: true |
-| postal_code          | integer | null:false      |
-| prefecture_id        | integer | null:false      |
-| address_city         | string  | null:false      |
-| address_house_number | int     | null:false      |
-| phone_number         | int     | null:false      |
+| Column        | Type    | Options         |
+| ------------- | ------- | --------------- |
+| id            | integer | prime_key: true |
+| postal_code   | integer | null:false      |
+| prefecture_id | integer | null:false      |
+| city          | string  | null:false      |
+| house_number  | string  | null:false      |
+| building      | string  | null:false      |
+| phone_number  | int     | null:false      |
 
 ### Association
 
