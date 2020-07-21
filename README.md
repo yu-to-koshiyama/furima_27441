@@ -56,14 +56,14 @@ Things you may want to cover:
 
 ## Purchases テーブル
 
-| Column          | Type       | Options         |
-| --------------- | ---------- | --------------- |
-| id              | integer    | prime_key: true |
-| credit_number   | int        | null:false      |
-| expiration_date | date       | null:false      |
-| security_code   | int        | null:false      |
-| user            | references | null:false      |
-| address         | references | null:false      |
+| Column          | Type       | Options                      |
+| --------------- | ---------- | ---------------------------- |
+| id              | integer    | prime_key: true              |
+| credit_number   | int        | null:false                   |
+| expiration_date | date       | null:false                   |
+| security_code   | int        | null:false                   |
+| user            | references | null:false ,foreign_key:true |
+| address         | references | null:false ,foreign_key:true |
 
 ### Association
 
@@ -87,12 +87,12 @@ Things you may want to cover:
 
 ## Dealings テーブル
 
-| Column             | Type       | Options         |
-| ------------------ | ---------- | --------------- |
-| id                 | integer    | prime_key: true |
-| buyer_id           | references | null:false      |
-| seller_id          | references | null:false      |
-| exhibited_goods_id | references | null:false      |
+| Column             | Type       | Options                      |
+| ------------------ | ---------- | ---------------------------- |
+| id                 | integer    | prime_key: true              |
+| buyer_id           | references | null:false,foreign_key:true  |
+| seller_id          | references | null:false ,foreign_key:true |
+| exhibited_goods_id | references | null:false ,foreign_key:true |
 
 ### Association
 
