@@ -31,28 +31,32 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :dealings
-- has_many :Purchases
+- has_many:dealings
+- has_many:purchases
+- has_many: exhibited_items
 
-## Exhibited_goods テーブル
+## Exhibited_items テーブル
 
 | Column            | Type       | Options                     |
 | ----------------- | ---------- | --------------------------- |
 | id                | integer    | prime_key: true             |
 | image             | string     | null:false                  |
-| goods_name        | string     | null: false                 |
-| goods_explanation | text       | null: false                 |
-| selling_price     | integer    | null:false                  |
+| name              | string     | null: false                 |
+| explanation       | text       | null: false                 |
+| price             | integer    | null:false                  |
 | category_id       | integer    | null:false                  |
 | status_id         | integer    | null:false                  |
 | payment_id        | integer    | null:false                  |
 | prefecture_id     | integer    | null:false                  |
 | until_delivery_id | integer    | null:false                  |
-| user              | references | null:false,foreign_key:true |
+| seller(user)      | references | null:false,foreign_key:true |
+| buyer(user)       | references | foreign_key:true            |
 
 ### Association
 
 - belongs_to:dealing
+- belongs_to:seller
+- belongs_to:buyer
 
 ## Purchases テーブル
 
@@ -90,14 +94,13 @@ Things you may want to cover:
 | Column             | Type       | Options                      |
 | ------------------ | ---------- | ---------------------------- |
 | id                 | integer    | prime_key: true              |
-| buyer_id           | references | null:false,foreign_key:true  |
-| seller_id          | references | null:false ,foreign_key:true |
+| user_id            | references | null:false ,foreign_key:true |
 | exhibited_goods_id | references | null:false ,foreign_key:true |
 
 ### Association
 
 - belongs_to:user
-- belongs_to:exhibited_goods
+- has_one:exhibited_item
 
 * Database initialization
 
