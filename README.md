@@ -91,11 +91,11 @@ Things you may want to cover:
 
 ## Dealings テーブル
 
-| Column             | Type       | Options                      |
-| ------------------ | ---------- | ---------------------------- |
-| id                 | integer    | prime_key: true              |
-| user_id            | references | null:false ,foreign_key:true |
-| exhibited_goods_id | references | null:false ,foreign_key:true |
+| Column            | Type       | Options                      |
+| ----------------- | ---------- | ---------------------------- |
+| id                | integer    | prime_key: true              |
+| user_id           | references | null:false ,foreign_key:true |
+| exhibited_item_id | references | null:false ,foreign_key:true |
 
 ### Association
 
