@@ -65,7 +65,7 @@ Things you may want to cover:
 | prefecture_id | integer | null:false      |
 | city          | string  | null:false      |
 | house_number  | string  | null:false      |
-| building      | string  | null:false      |
+| building      | string  |                 |
 | phone_number  | int     | null:false      |
 
 ### Association
