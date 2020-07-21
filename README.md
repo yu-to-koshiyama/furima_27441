@@ -32,49 +32,31 @@ Things you may want to cover:
 ### Association
 
 - has_many:dealings
-- has_many:purchases
 - has_many: exhibited_items
 
 ## Exhibited_items テーブル
 
-| Column            | Type       | Options                     |
-| ----------------- | ---------- | --------------------------- |
-| id                | integer    | prime_key: true             |
-| image             | string     | null:false                  |
-| name              | string     | null: false                 |
-| explanation       | text       | null: false                 |
-| price             | integer    | null:false                  |
-| category_id       | integer    | null:false                  |
-| status_id         | integer    | null:false                  |
-| payment_id        | integer    | null:false                  |
-| prefecture_id     | integer    | null:false                  |
-| until_delivery_id | integer    | null:false                  |
-| seller(user)      | references | null:false,foreign_key:true |
-| buyer(user)       | references | foreign_key:true            |
-
-### Association
-
-- belongs_to:dealing
-- belongs_to:seller
-- belongs_to:buyer
-
-## Purchases テーブル
-
-| Column          | Type       | Options                      |
-| --------------- | ---------- | ---------------------------- |
-| id              | integer    | prime_key: true              |
-| credit_number   | int        | null:false                   |
-| expiration_date | date       | null:false                   |
-| security_code   | int        | null:false                   |
-| user            | references | null:false ,foreign_key:true |
-| address         | references | null:false ,foreign_key:true |
+| Column            | Type       | Options          |
+| ----------------- | ---------- | ---------------- |
+| id                | integer    | prime_key: true  |
+| image             | string     | null:false       |
+| name              | string     | null: false      |
+| explanation       | text       | null: false      |
+| price             | integer    | null:false       |
+| category_id       | integer    | null:false       |
+| status_id         | integer    | null:false       |
+| payment_id        | integer    | null:false       |
+| prefecture_id     | integer    | null:false       |
+| until_delivery_id | integer    | null:false       |
+| user              | references | foreign_key:true |
 
 ### Association
 
 - belongs_to:user
-- has_one: address
+- has_one:dealing
+- has_one:shipping_address
 
-## Addresses テーブル
+## Shipping_addresses テーブル
 
 | Column               | Type    | Options         |
 | -------------------- | ------- | --------------- |
@@ -87,7 +69,7 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to:purchase
+- belongs_to:exhibited_item
 
 ## Dealings テーブル
 
@@ -100,7 +82,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to:user
-- has_one:exhibited_item
+- belongs_to:exhibited_item
 
 * Database initialization
 
