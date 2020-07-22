@@ -1,0 +1,104 @@
+%body
+  .items-sell-contents
+    %header.items-sell-header
+      = link_to image_tag('furima-logo-color.png' , size: '185x50'), "/"
+    .items-sell-main
+      %h2.items-sell-title 商品の情報を入力
+      = form_with local: true do |f|
+        .img-upload
+          .weight-bold-text
+            出品画像
+            %span.indispensable 必須
+          .click-upload
+            %p
+              クリックしてファイルをアップロード
+            = f.file_field :hoge
+        .new-items
+          .weight-bold-text
+            商品名
+            %span.indispensable 必須
+          = f.text_area :hoge, class:"items-text", placeholder:"商品名（必須 40文字まで)", maxlength:"40"
+          .items-explain
+            .weight-bold-text
+              商品の説明
+              %span.indispensable 必須
+            = f.text_area :hoge, class:"items-text", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000"
+        .items-detail
+          .weight-bold-text 商品の詳細
+          .form
+            .weight-bold-text
+              カテゴリー
+              %span.indispensable 必須
+            = f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box"})
+            .weight-bold-text
+              商品の状態
+              %span.indispensable 必須
+            = f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box"})
+        .items-detail
+          .weight-bold-text.question-text
+            %span 配送について
+            %a.question{:href => "#"} ?
+          .form
+            .weight-bold-text
+              配送料の負担
+              %span.indispensable 必須
+            = f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box"})
+            .weight-bold-text
+              発送元の地域
+              %span.indispensable 必須
+            = f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box"})
+            .weight-bold-text
+              発送までの日数
+              %span.indispensable 必須
+            = f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box"})
+        .sell-price
+          .weight-bold-text.question-text
+            %span
+              販売価格
+              %br>/
+              (¥300〜9,999,999)
+            %a.question{:href => "#"} ?
+          %div
+            .price-content
+              .price-text
+                %span 価格
+                %span.indispensable 必須
+              %span.sell-yen ¥
+              = f.text_field :hoge, class:"price-input", placeholder:"例）300"
+            .price-content
+              %span 販売手数料 (10%)
+              %span
+                %span#add-tax-price>
+                円
+            .price-content
+              %span 販売利益
+              %span
+                %span#profit>
+                円
+        .caution
+          %p.sentence
+            %a{:href => "#"} 禁止されている出品、
+            %a{:href => "#"} 行為
+            を必ずご確認ください。
+          %p.sentence
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %a{:href => "#"} 偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+          %p.sentence
+            また、出品をもちまして
+            %a{:href => "#"} 加盟店規約
+            に同意したことになります。
+        .sell-btn-contents
+          = f.submit "変更する" ,class:"sell-btn"
+          = link_to 'もどる', "#", class:"back-btn"
+    %footer.items-sell-footer
+      %ul.menu
+        %li
+          %a{:href => "#"} プライバシーポリシー
+        %li
+          %a{:href => "#"} フリマ利用規約
+        %li
+          %a{:href => "#"} 特定商取引に関する表記
+      = link_to image_tag('furima-logo-color.png' , size: '185x50'), "/"
+      %p.inc
+        ©︎Furima,Inc.

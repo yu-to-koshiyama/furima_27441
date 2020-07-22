@@ -1,0 +1,68 @@
+= render "shared/header"
+.item-show
+  .item-box
+    %h2.name
+      = "商品名"
+    .item-img-content
+      = image_tag "item-sample.png" ,class:"item-box-img"
+      .sold-out
+        %span Sold Out!!
+    .item-price-box
+      %span.item-price
+        ¥ 999,999,999
+      %span.item-postage
+        (税込) 送料込み
+    = link_to '商品の編集', "#", method: :get, class: "item-red-btn"
+    %p.or-text or
+    = link_to '削除', "#", method: :delete, class:'item-destroy'
+    = link_to '購入画面に進む', "#" ,class:"item-red-btn"
+    .item-explain-box
+      %span= "商品説明"
+    %table.detail-table
+      %tbody
+        %tr
+          %th.detail-item 出品者
+          %td.detail-value= "出品者名"
+        %tr
+          %th.detail-item カテゴリー
+          %td.detail-value= "カテゴリー名"
+        %tr
+          %th.detail-item 商品の状態
+          %td.detail-value= "商品の状態"
+        %tr
+          %th.detail-item 配送料の負担
+          %td.detail-value= "発送料の負担"
+        %tr
+          %th.detail-item 発送元の地域
+          %td.detail-value= "発送元の地域"
+        %tr
+          %th.detail-item 発送日の目安
+          %td.detail-value= "発送日の目安"
+    .option
+      .favorite-btn
+        = image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"
+        %span お気に入り 0
+      .report-btn
+        = image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"
+        %span 不適切な商品の通報
+  .comment-box
+    %form
+      %textarea.comment-text
+      %p.comment-warn
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br/
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %button.comment-btn{:type => "submit"}
+        = image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"
+        %span
+          コメントする
+          %span
+  .links
+    %a.change-item-btn{:href => "#"}
+      ＜ 前の商品
+    %a.change-item-btn{:href => "#"}
+      後ろの商品 ＞
+  %a.another-item{:href => "#"}
+    = "商品のカテゴリー名"
+    をもっと見る
+= render "shared/footer"
