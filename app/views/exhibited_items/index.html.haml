@@ -1,0 +1,115 @@
+= render "shared/header"
+.main
+  .title-contents
+    %h2.service-title
+      人生を変えるフリマアプリ
+    %p.service-explain
+      FURIMAはだれでもかんたんに出品・購入できる
+    %p.service-explain
+      フリマアプリです
+    .store-btn
+      = link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#"
+      = link_to image_tag("dl-android.png", class:"google-btn"), "#"
+  .select-reason-contents
+    %h2.title
+      FURIMAが選ばれる3つの理由
+    %ul.reason-lists
+      %li.list
+        = image_tag "furima-intro01.png", class:"list-pict"
+        %span.reason-list-number 1
+        %h3.reason-list-text
+          %span.reason-list-blue-text 3分
+          ですぐに出品
+        %p.reason-list-description
+          スマホで入力するだけで簡単に出品できる！
+      %li.list
+        = image_tag "furima-intro02.png", class:"list-pict"
+        %span.reason-list-number 2
+        %h3.reason-list-text
+          %span.reason-list-blue-text シンプル
+          で使いやすい
+        %p.reason-list-description
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        = image_tag "furima-intro03.png", class:"list-pict"
+        %span.reason-list-number 3
+        %h3.reason-list-text
+          手数料
+          %span.reason-list-blue-text 業界最安
+        %p.reason-list-description
+          最大3%でお得に出品&amp;購入！
+  .ad-contents
+    %h2.ad-title
+      会員数日本一位
+    %p.ad-explain
+      FURIMAは、フリマアプリで最も人気。
+    %p.ad-explain
+      出品・購入回数も業界最多です！
+    %p.ad-explain
+      ほしかったあの商品に出会えるかもしれません。
+    .store-btn
+      = link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#"
+      = link_to image_tag("dl-android.png", class:"google-btn"), "#"
+  .feature-contents
+    %h2.title
+      FURIMAの特徴
+    %ul.feature-lists
+      %li.list
+        = image_tag "furima-intro04.png", class:"list-pict"
+        %h3.feature-list-text
+          簡単に売り買いできる
+        %p.feature-list-description
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.list
+        = image_tag "furima-intro05.png", class:"list-pict"
+        %h3.feature-list-text
+          売上金は即日振込みに対応
+        %p.feature-list-description
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします。
+      %li.list
+        = image_tag "furima-intro06.png", class:"list-pict"
+        %h3.feature-list-text
+          様々な支払いに対応
+        %p.feature-list-description
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  .item-contents
+    %h2.title ピックアップカテゴリー
+    = link_to '新規投稿商品', "#", class: "subtitle"
+    %ul.item-lists
+      %li.list
+        = link_to "#" do
+          .item-img-content
+            = image_tag "item-sample.png", class: "item-img"
+            .sold-out
+              %span Sold Out!!
+          .item-info
+            %h3.item-name
+              = "商品名"
+            .item-price
+              %span
+                = "販売価格"
+                円
+                %br>/
+                (税込み)
+              .star-btn
+                = image_tag "star.png", class:"star-icon"
+                %span.star-count 0
+      %li.list
+        = link_to '#' do
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img"
+          .item-info
+            %h3.item-name
+              商品を出品してね！
+            .item-price
+              %span
+                99999999円
+                %br>/
+                (税込み)
+              .star-btn
+                = image_tag "star.png", class:"star-icon"
+                %span.star-count 0
+.purchase-btn
+  %span.purchase-btn-text 出品する
+  %a{:href => "#"}
+    = image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon"
+= render "shared/footer"

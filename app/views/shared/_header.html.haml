@@ -1,0 +1,14 @@
+%header.top-page-header
+  .search-bar-contents
+    = link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/"
+    %form.search-form{:action => "#"}
+      %input.input-box{:placeholder => "キーワードから探す"}/
+      %button.search-button
+        = image_tag "search.png", class:"search-icon"
+  .nav
+    %ul.lists-left
+      %li= link_to 'カテゴリー', "#", class: "category-list"
+      %li= link_to 'ブランド', "#", class: "brand-list"
+    %ul.lists-right
+      %li= link_to 'ログイン', "#", class: "login"
+      %li= link_to '新規登録', "#", class: "sign-up"

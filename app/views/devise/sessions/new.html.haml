@@ -1,0 +1,22 @@
+= render "shared/second-header"
+= form_with class: 'registration-main', local: true do |f|
+  .form-wrap
+    .form-header
+      %h1.form-header-text
+        会員情報入力
+    .login-flash-message
+      = flash[:notice]
+      = flash[:alert]
+    .form-group
+      .form-text-wrap
+        %label.form-text メールアドレス
+        %span.indispensable 必須
+      = f.email_field :hoge, class:"input-default", placeholder:"PC・携帯どちらでも可", autofocus: true
+    .form-group
+      .form-text-wrap
+        %label.form-text パスワード
+        %span.indispensable 必須
+      = f.password_field :hoge, class:"input-default", placeholder:""
+    .login-btn
+      = f.submit "ログイン" ,class:"login-red-btn"
+= render "shared/second-footer"
