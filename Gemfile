@@ -56,8 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #自分で導入したgem
 gem 'pry-rails'
-gem 'html2haml'
-gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
 #Herokuにアップするためのgem
 group :production do
