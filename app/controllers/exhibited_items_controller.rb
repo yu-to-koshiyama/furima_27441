@@ -4,7 +4,7 @@ class ExhibitedItemsController < ApplicationController
   end
 
   def new
-  
+    @exhibited_item = Exhibited_item.new
   end
   
   private
