@@ -1,0 +1,2 @@
+class ExhibitedItem < ApplicationRecord
+end
