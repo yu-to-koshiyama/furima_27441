@@ -182,8 +182,14 @@
 </div>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>出品する</span>
-  <a href="#">
+  <% if user_signed_in? %>
+  <a href= "exhibited_items/new" >
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </a>
+  <% else %>
+  <a href= "/users/sign_in" >
+    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  </a>
+  <% end %>
 </div>
 <%= render "shared/footer" %>
