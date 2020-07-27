@@ -29,3 +29,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+# 画像はGithubにアップロードしない
+public/uploads/*
