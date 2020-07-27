@@ -59,6 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #自分で導入したgem
 gem 'pry-rails'
 gem 'devise'
+gem 'active_hash'
 
 #Herokuにアップするためのgem
 group :production do
