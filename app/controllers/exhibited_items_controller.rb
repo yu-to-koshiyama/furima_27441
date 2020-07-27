@@ -1,10 +1,11 @@
 class ExhibitedItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :new]
   def index
+    @exhibitedItems = ExhibitedItem.all
   end
 
   def new
-    @exhibited_item = Exhibited_item.new
+    @exhibitedItem = ExhibitedItem.new
   end
   
   private
