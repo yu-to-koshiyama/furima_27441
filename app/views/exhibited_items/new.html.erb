@@ -5,9 +5,9 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with model: @exhibited_item, url: exhibited_items_path,local: true do |f| %>
+    <%= form_with model: @exhibitedItem, url: exhibited_items_path,local: true do |f| %>
 
-    <% render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <%# 出品画像 %>
     <div class="img-upload">
@@ -19,7 +19,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :hoge %>
+        <%= f.file_field :image %>
       </div>
     </div>
     <%# /出品画像 %>
@@ -69,17 +69,17 @@
           配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:payment, Payment.all, :id, :subject, {}, {class:"select-box"}) %>
+        <%= f.collection_select(:payment_id, Payment.all, :id, :subject, {}, {class:"select-box"}) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:prefecture, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
         <div class="weight-bold-text">
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:until_delivery, UntilDelivery.all, :id, :time, {}, {class:"select-box"}) %>
+        <%= f.collection_select(:until_delivery_id, UntilDelivery.all, :id, :time, {}, {class:"select-box"}) %>
       </div>
     </div>
     <%# /配送について %>
@@ -97,7 +97,7 @@
             <span class="indispensable">必須</span>
           </div>
           <span class="sell-yen">¥</span>
-          <%= f.text_field :hoge, class:"price-input", placeholder:"例）300" %>
+          <%= f.text_field :price, class:"price-input", placeholder:"例）300" %>
         </div>
         <div class="price-content">
           <span>販売手数料 (10%)</span>
