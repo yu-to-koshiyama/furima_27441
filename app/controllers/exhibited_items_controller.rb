@@ -13,11 +13,12 @@ class ExhibitedItemsController < ApplicationController
     if @exhibitedItem.save
       redirect_to root_path
     else
-      render "new"
+      render 'new'
     end
   end
-  
+
   private
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end

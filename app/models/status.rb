@@ -6,6 +6,6 @@ class Status < ActiveHash::Base
     { id: 4, code: '目立った傷や汚れなし' },
     { id: 5, code: 'やや傷や汚れあり' },
     { id: 6, code: '傷や汚れあり' },
-    { id: 7, code: '全体的に状態が悪い' },
+    { id: 7, code: '全体的に状態が悪い' }
   ]
 end
