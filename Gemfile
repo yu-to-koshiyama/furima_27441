@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -59,6 +60,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #自分で導入したgem
 gem 'pry-rails'
 gem 'devise'
+gem 'active_hash'
+gem 'mini_magick'
+gem 'jquery-rails'
 
 #Herokuにアップするためのgem
 group :production do
