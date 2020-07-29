@@ -7,6 +7,7 @@ class ExhibitedItem < ApplicationRecord
   belongs_to_active_hash :until_delivery
 
   has_one_attached :image
+  belongs_to :user
 
   # 空の投稿を保存できないようにする
   validates :image, :name, :explanation, :category_id, :status_id, :payment_id, :prefecture_id, :until_delivery_id, :price, presence: true
