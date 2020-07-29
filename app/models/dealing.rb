@@ -1,0 +1,2 @@
+class Dealing < ApplicationRecord
+end
