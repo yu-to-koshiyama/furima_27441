@@ -26,16 +26,16 @@
     </div>
 
     <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <% if user_signed_in? && current_user.id == @exhibitedItem.user_id %>
+    <% if user_signed_in? && current_user.id == @exhibitedItem.user_id && @exhibitedItem.dealing == nil %>
       <%= link_to '商品の編集', edit_exhibited_item_path(@exhibitedItem.id), method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
     <% else %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
-      <% if @exhibitedItem.dealing == nil && user_signed_in? %>
-        <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
-      <% elsif @exhibitedItem.dealing != nil %>
+      <% if @exhibitedItem.dealing != nil %>
       
+      <% elsif @exhibitedItem.dealing == nil && user_signed_in? %>
+        <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
       <% else %>
         <%= link_to '購入画面に進む', new_user_session_path ,class:"item-red-btn"%> 
       <% end %>
