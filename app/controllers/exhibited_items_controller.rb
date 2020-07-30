@@ -1,6 +1,6 @@
 class ExhibitedItemsController < ApplicationController
   before_action :set_exhibitedItem, only: [:edit, :show]
-  before_action :authenticate_user!, only: [:new, :edit, :show]
+  before_action :authenticate_user!, only: [:new]
   def index
     @exhibitedItems = ExhibitedItem.all
     @dealings = Dealing.all
