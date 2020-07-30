@@ -1,6 +1,6 @@
 class ExhibitedItemsController < ApplicationController
   before_action :set_exhibitedItem, only: [:edit, :show]
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit, :show]
   def index
     @exhibitedItems = ExhibitedItem.all
     @dealings = Dealing.all
@@ -18,9 +18,21 @@ class ExhibitedItemsController < ApplicationController
       render 'new'
     end
   end
+  
+  def edit
+  end
+
+  def update
+    exhibitedItem = ExhibitedItem.find(params[:id])
+    exhibitedItem.update(exhibitedItem_params)
+    if exhibitedItem.save
+      redirect_to exhibited_item_path(exhibitedItem.id)
+    else
+      render 'edit'
+    end
+  end
 
   def show
-
   end 
 
   private
