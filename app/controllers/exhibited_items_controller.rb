@@ -18,7 +18,7 @@ class ExhibitedItemsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def edit
   end
 
@@ -33,13 +33,14 @@ class ExhibitedItemsController < ApplicationController
   end
 
   def show
-  end 
+  end
 
   private
 
   def exhibitedItem_params
     params.require(:exhibited_item).permit(:name, :explanation, :price, :category_id, :status_id, :payment_id, :prefecture_id, :until_delivery_id, :image).merge(user_id: current_user.id)
   end
+
   def set_exhibitedItem
     @exhibitedItem = ExhibitedItem.find(params[:id])
   end
