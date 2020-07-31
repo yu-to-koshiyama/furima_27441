@@ -1,5 +1,5 @@
 class ExhibitedItemsController < ApplicationController
-  before_action :set_exhibitedItem, only: [:edit, :show]
+  before_action :set_exhibitedItem, only: [:edit, :show, :destroy]
   before_action :authenticate_user!, only: [:new]
   def index
     @exhibitedItems = ExhibitedItem.all
@@ -16,6 +16,14 @@ class ExhibitedItemsController < ApplicationController
       redirect_to root_path
     else
       render 'new'
+    end
+  end
+
+  def destroy
+    if @exhibitedItem.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path, alert: "削除が失敗しました"
     end
   end
 

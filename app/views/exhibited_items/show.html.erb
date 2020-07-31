@@ -28,7 +28,7 @@
     <% if user_signed_in? && current_user.id == @exhibitedItem.user_id && @exhibitedItem.dealing == nil %>
       <%= link_to '商品の編集', edit_exhibited_item_path(@exhibitedItem.id), method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
-      <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
+      <%= link_to '削除', exhibited_item_path(@exhibitedItem.id), method: :delete, class:'item-destroy' %>
     <% else %>
       <% if @exhibitedItem.dealing != nil %>
       <% elsif @exhibitedItem.dealing == nil && user_signed_in? %>
