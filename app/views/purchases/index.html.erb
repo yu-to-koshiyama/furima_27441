@@ -1,8 +1,8 @@
 <%= render "shared/second-header"%>
 
-<div class='transaction-contents'>
-  <div class='transaction-main'>
-    <h1 class='transaction-title-text'>
+<div class='purchase-contents'>
+  <div class='purchase-main'>
+    <h1 class='purchase-title-text'>
       購入内容の確認
     </h1>
     <%# 購入内容の表示 %>
@@ -31,7 +31,7 @@
     </div>
     <%# /支払額の表示 %>
 
-    <%= form_with id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with id: 'charge-form', class: 'purchase-form-wrap',local: true do |f| %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
@@ -73,7 +73,7 @@
     <%# /カード情報の入力 %>
     <%# 配送先の入力 %>
     <div class='shipping-address-form'>
-      <h1 class='info-input-haedline'>
+      <h1 class='info-input-headline'>
         配送先入力
       </h1>
       <div class="form-group">
