@@ -18,11 +18,16 @@ class ExhibitedItemsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def destroy
     exhibitedItem = ExhibitedItem.find(params[:id])
-    exhibitedItem.destroy
-    redirect_to root_path
+
+    if exhibitedItem.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path, alert: "削除が失敗しました"
+    end
+    
   end
 
   def edit
