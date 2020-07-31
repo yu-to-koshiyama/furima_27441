@@ -122,7 +122,7 @@ app/assets/stylesheets/items/new.css %>
     </div>
     <div class="sell-btn-contents">
       <%= f.submit "変更する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', exhibited_item_path(@exhibitedItem.id), class:"back-btn" %>
+      <%= link_to 'もどる', exhibited_item_path(@exhibitedItem.id), class:"back-btn" %>
     </div>
   </div>
   <% end %>

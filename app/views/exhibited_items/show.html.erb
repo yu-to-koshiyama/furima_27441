@@ -101,7 +101,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%=@exhibitedItem.category.name  %>をもっと見る</a>
+  <%= link_to @exhibitedItem.category.name + 'をもっと見る', "#", class: 'another-item'  %>
 </div>
 
 <%= render "shared/footer" %>
