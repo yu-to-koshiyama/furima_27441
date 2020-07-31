@@ -18,6 +18,12 @@ class ExhibitedItemsController < ApplicationController
       render 'new'
     end
   end
+  
+  def destroy
+    exhibitedItem = ExhibitedItem.find(params[:id])
+    exhibitedItem.destroy
+    redirect_to root_path
+  end
 
   def edit
   end
