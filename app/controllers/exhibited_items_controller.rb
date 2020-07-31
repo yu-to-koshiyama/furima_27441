@@ -23,10 +23,10 @@ class ExhibitedItemsController < ApplicationController
   end
 
   def update
-    exhibitedItem = ExhibitedItem.find(params[:id])
-    exhibitedItem.update(exhibitedItem_params)
-    if exhibitedItem.save
-      redirect_to exhibited_item_path(exhibitedItem.id)
+    @exhibitedItem = ExhibitedItem.find(params[:id])
+    @exhibitedItem.update(exhibitedItem_params)
+    if @exhibitedItem.save
+      redirect_to exhibited_item_path(@exhibitedItem.id)
     else
       render 'edit'
     end
