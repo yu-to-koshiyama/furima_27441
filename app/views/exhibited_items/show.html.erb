@@ -8,13 +8,13 @@
     </h2>
     <div class='item-img-content'>
       <%= image_tag @exhibitedItem.image ,class:"item-box-img" %>
-      <%# 商品が売れている場合は、sould outの表示をしましょう。 %>
+      
       <% if @exhibitedItem.dealing != nil %>
       <div class='sold-out'>
         <span>Sold Out!!</span>
       </div>
       <% end %>
-      <%# //商品が売れている場合は、sould outの表示をしましょう。 %>
+      
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -25,25 +25,18 @@
       </span>
     </div>
 
-    <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
     <% if user_signed_in? && current_user.id == @exhibitedItem.user_id && @exhibitedItem.dealing == nil %>
       <%= link_to '商品の編集', edit_exhibited_item_path(@exhibitedItem.id), method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
     <% else %>
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
       <% if @exhibitedItem.dealing != nil %>
-      
       <% elsif @exhibitedItem.dealing == nil && user_signed_in? %>
         <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
       <% else %>
         <%= link_to '購入画面に進む', new_user_session_path ,class:"item-red-btn"%> 
       <% end %>
     <% end %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
-
-    <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-
     <div class="item-explain-box">
       <span><%= @exhibitedItem.explanation %></span>
     </div>
@@ -86,8 +79,6 @@
       </div>
     </div>
   </div>
-  <%# /商品の概要 %>
-
   <div class="comment-box">
     <form>
       <textarea class="comment-text"></textarea>
