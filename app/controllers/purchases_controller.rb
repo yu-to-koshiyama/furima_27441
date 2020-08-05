@@ -32,9 +32,8 @@ class PurchasesController < ApplicationController
 
     if user_signed_in? != true
       redirect_to new_user_session_path
-    elsif current_user.id == @exhibitedItem.user_id 
+    elsif current_user.id == @exhibitedItem.user_id || @exhibitedItem.dealing != nil
       redirect_to root_path
-    
     end  
   end
 
