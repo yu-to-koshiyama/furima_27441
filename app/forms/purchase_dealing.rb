@@ -3,10 +3,11 @@ class PurchaseDealing
   attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building, :phone_number, :exhibited_item_id, :user_id, :token
 
   validates :prefecture_id, :city, :house_number, :token, presence: true
-
+  POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/
+  POHNE_NUMBER_REGEX = /\A\d{11}\z/
   with_options presence: true do
-    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
-    validates :phone_number, format: { with: /\A\d{11}\z/ }
+    validates :postal_code, format: { with: POSTAL_CODE_REGEX }
+    validates :phone_number, format: { with: POHNE_NUMBER_REGEX }
   end
 
   # 選択が「---」のままになっていないか
