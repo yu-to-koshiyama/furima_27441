@@ -11,8 +11,8 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = PurchaseDealing.new(purchase_params)
-    if @purchase.valid?
-      pay_item
+    if @purchase.valid? && pay_item
+    
       @purchase.save
       return redirect_to root_path
     else

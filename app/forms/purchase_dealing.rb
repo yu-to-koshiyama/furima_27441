@@ -3,7 +3,7 @@ class PurchaseDealing
   include ActiveModel::Model
   attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building, :phone_number, :exhibited_item_id,:user_id, :token
 
-  validates :prefecture_id, :city, :house_number,  presence: true
+  validates :prefecture_id, :city, :house_number, :token,  presence: true
   
   with_options presence: true do
   validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
