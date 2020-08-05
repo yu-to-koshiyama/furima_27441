@@ -1,12 +1,11 @@
 class PurchasesController < ApplicationController
+  before_action :set_purchase, only: [:index, :new, :create]
   before_action :set_exhibitedItem, only: [:index, :new, :create]
   before_action :authenticate_user!, only: [:index]
   def index
-    @purchase = PurchaseDealing.new
   end
 
   def new
-    @purchase = PurchaseDealing.new
   end
 
   def create
@@ -21,6 +20,9 @@ class PurchasesController < ApplicationController
   end
 
   private
+  def set_purchase
+    @purchase = PurchaseDealing.new()
+  end
 
   def purchase_params
     params.require(:purchase_dealing).permit(:postal_code, :prefecture_id, :city, :house_number, :building, :phone_number, :token)
