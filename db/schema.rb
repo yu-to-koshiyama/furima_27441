@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_052610) do
+ActiveRecord::Schema.define(version: 2020_08_05_052000) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -57,6 +57,19 @@ ActiveRecord::Schema.define(version: 2020_07_29_052610) do
     t.index ["user_id"], name: "index_exhibited_items_on_user_id"
   end
 
+  create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "postal_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building", default: ""
+    t.string "phone_number", null: false
+    t.bigint "exhibited_item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exhibited_item_id"], name: "index_purchases_on_exhibited_item_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "family_name", null: false
@@ -79,4 +92,5 @@ ActiveRecord::Schema.define(version: 2020_07_29_052610) do
   add_foreign_key "dealings", "exhibited_items"
   add_foreign_key "dealings", "users"
   add_foreign_key "exhibited_items", "users"
+  add_foreign_key "purchases", "exhibited_items"
 end

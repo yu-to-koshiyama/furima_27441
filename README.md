@@ -56,17 +56,18 @@ Things you may want to cover:
 - has_one:dealing
 - has_one:shipping_address
 
-## Shipping_addresses テーブル
+## Purchases テーブル
 
-| Column        | Type    | Options         |
-| ------------- | ------- | --------------- |
-| id            | integer | prime_key: true |
-| postal_code   | integer | null:false      |
-| prefecture_id | integer | null:false      |
-| city          | string  | null:false      |
-| house_number  | string  | null:false      |
-| building      | string  |                 |
-| phone_number  | int     | null:false      |
+| Column         | Type       | Options          |
+| -------------- | ---------- | ---------------- |
+| id             | integer    | prime_key: true  |
+| postal_code    | integer    | null:false       |
+| prefecture_id  | integer    | null:false       |
+| city           | string     | null:false       |
+| house_number   | string     | null:false       |
+| building       | string     |                  |
+| phone_number   | string     | null:false       |
+| exhibited_item | references | foreign_key:true |
 
 ### Association
 

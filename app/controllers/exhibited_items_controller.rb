@@ -23,7 +23,7 @@ class ExhibitedItemsController < ApplicationController
     if @exhibitedItem.destroy
       redirect_to root_path
     else
-      redirect_to root_path, alert: "削除が失敗しました"
+      redirect_to root_path, alert: '削除が失敗しました'
     end
   end
 
